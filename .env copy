@@ -1,0 +1,9 @@
+//CONEXION BASE DATOS NELSON
+DATABASE_URL = mongodb+srv://admin:AdminProyectos@gestionproyectosmintic.f2y99.mongodb.net/GestionProyectos?retryWrites=true&w=majority
+
+PORT = 4000
+
+//CONEXION BASE DATOS QUIMBAYA
+DATABASE_URL = mongodb+srv://Nelson:N3ls0nD3v@proyectociclo4.cq67b.mongodb.net/GestionProyectos?retryWrites=true&w=majority
+
+PORT = 4000
