@@ -11,4 +11,4 @@ const conectarBD = async () => {
     });
 };
 
-export default conectarBD
+export default conectarBD;

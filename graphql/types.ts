@@ -4,8 +4,9 @@ import { typeUser } from "../models/user/types";
 import { typeProject } from "../models/project/types";
 import { typeAdvance } from "../models/advance/types";
 
-const typeGlobal = gql`
+const typeGlobals = gql`
+
     scalar Date
 `;
 
-export const types = [typeGlobal, typeEnums, typeUser, typeProject, typeAdvance];
+export const types = [typeGlobals, typeEnums, typeUser, typeProject, typeAdvance];

@@ -1,12 +1,12 @@
 import { ProjectModel } from "./project";
 
 const resolversProject = {
-    Query:{
-        Proyects: async (parent, args) => {
-            const proyects = await ProjectModel.find().populate('lider');
-            return proyects;
-        },
-    },
+    // Query:{
+    //     Proyects: async (parent, args) => {
+    //         const proyects = await ProjectModel.find().populate('lider');
+    //         return proyects;
+    //     },
+    // },
 
     Mutation: {
         createProject: async (parent, args) => {

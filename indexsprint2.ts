@@ -1,7 +1,7 @@
 import conectarBD from "./db/db";
 import { UserModel } from "./models/user/user";
 import { Enum_EstadoUsuario, Enum_Rol, Enum_TipoObjetivo } from "./models/enums/enums";
-import { ProjectModel } from "./models/project/project";
+import { ProjectModel } from "./models/projects/project";
 import { ObjectId } from "mongoose";
 import { ObjectiveModel } from "./models/objective";
 
@@ -31,19 +31,19 @@ const crearProyectoConObjetivos1 = async () => {
  
     const objetivoGeneral = await ObjectiveModel.create({
         descripcion: "Este es el objetivo general",
-        tipo: Enum_TipoObjetivo.general,
+        tipo: Enum_TipoObjetivo.GENERAL,
         proyecto: proyectoCreado._id,
     });
  
     const objetivoEspecifico1 = await ObjectiveModel.create({
          descripcion: "Este es el objetivo especifico 1",
-         tipo: Enum_TipoObjetivo.especifico,
+         tipo: Enum_TipoObjetivo.ESPECIFICO,
          proyecto: proyectoCreado._id,
     });
  
     const objetivoEspecifico2 = await ObjectiveModel.create({
          descripcion: "Este es el objetivo especifico 2",
-         tipo: Enum_TipoObjetivo.especifico,
+         tipo: Enum_TipoObjetivo.ESPECIFICO,
          proyecto: proyectoCreado._id,
     });
 }
@@ -80,17 +80,17 @@ const crearProyectoConObjetivos2 = async () => {
 
     const objetivoGeneral = await ObjectiveModel.create({
         descripcion: "Este es el objetivo general",
-        tipo: Enum_TipoObjetivo.general,
+        tipo: Enum_TipoObjetivo.GENERAL,
     });
  
     const objetivoEspecifico1 = await ObjectiveModel.create({
          descripcion: "Este es el objetivo especifico 1",
-         tipo: Enum_TipoObjetivo.especifico,
+         tipo: Enum_TipoObjetivo.ESPECIFICO,
     });
  
     const objetivoEspecifico2 = await ObjectiveModel.create({
          descripcion: "Este es el objetivo especifico 2",
-         tipo: Enum_TipoObjetivo.especifico,
+         tipo: Enum_TipoObjetivo.ESPECIFICO,
     });
 
     const proyectoCreado = await ProjectModel.create({
@@ -138,15 +138,15 @@ const crearProyectoConObjetivos3 = async () => {
         objetivos:[
             {
                 descripcion: "Este es el objetivo general",
-                tipo: Enum_TipoObjetivo.general
+                tipo: Enum_TipoObjetivo.GENERAL
             },
             {
                 descripcion: "Este es el objetivo especifico 1",
-                tipo: Enum_TipoObjetivo.especifico
+                tipo: Enum_TipoObjetivo.ESPECIFICO
             },
             {
                 descripcion: "Este es el objetivo especifico 2",
-                tipo: Enum_TipoObjetivo.especifico
+                tipo: Enum_TipoObjetivo.ESPECIFICO
             },
         ],
     });

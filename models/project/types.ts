@@ -24,9 +24,9 @@ const typeProject = gql`
         objetivos:[Objective]
     }
 
-    type Query {
-        Projects:[Project]
-    }
+    # type Query {
+    #     Projects:[Project]
+    # }
 
     type Mutation{
         createProject(

@@ -41,7 +41,6 @@ const typeUser = gql`
             _id:String
             correo:String
         ):User
-
     }
 `;
 

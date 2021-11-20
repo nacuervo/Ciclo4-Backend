@@ -1,25 +1,25 @@
-import { AdvanceModel } from "./advance"
-
+import { AdvanceModel } from "./advance";
 
 const resolversAdvance = {
     Query:{
-        Advance: async (parent, args) => {
-            const advance = await AdvanceModel.find();
-            return advance;
-        }
+        Advances: async (paren, args) => {
+            const advances = await AdvanceModel.find();
+            return advances;
+        },
     },
 
     Mutation:{
         createAdvance: async (parent, args) => {
-            const advanceCreated = AdvanceModel.create({
+            const advanceCreated = await AdvanceModel.create({
                 fecha: args.fecha,
                 descripcion: args.descripcion,
                 proyecto: args.proyecto,
                 creadoPor: args.creadoPor,
             });
             return advanceCreated;
-        },
+        }
     },
 };
 
 export {resolversAdvance};
+

@@ -32,7 +32,7 @@ const resolversUser = {
         },
         
         editUser: async (parent, args) => {
-            const userEdit = await UserModel.findOneAndUpdate(args._id,{
+            const userEdited = await UserModel.findOneAndUpdate(args._id,{
                 nombre:args.nombre,
                 apellido:args.apellido,
                 identificacion:args.identificacion,
@@ -40,16 +40,16 @@ const resolversUser = {
                 rol:args.rol,
                 estado: args.estado
             });
-            return userEdit;
+            return userEdited;
         },
 
         deleteUser: async (parent, args) => {
             if(Object.keys(args).includes('_id')) {
-                const userEliminated = await UserModel.findOneAndDelete({_id:args._id});
-                return userEliminated;
+                const userDeleted = await UserModel.findOneAndDelete({_id:args._id});
+                return userDeleted;
             }else if(Object.keys(args).includes('correo')) {
-                const userEliminated = await UserModel.findOneAndDelete({correo:args.correo});
-                return userEliminated;
+                const userDeleted = await UserModel.findOneAndDelete({correo:args.correo});
+                return userDeleted;
             }
         },
     },
