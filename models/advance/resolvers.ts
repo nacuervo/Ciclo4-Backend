@@ -1,3 +1,4 @@
+import { isParameterPropertyDeclaration } from "typescript";
 import { AdvanceModel } from "./advance";
 
 const resolversAdvance = {
@@ -6,6 +7,13 @@ const resolversAdvance = {
             const advances = await AdvanceModel.find().populate('proyecto').populate('creadoPor');
             return advances;
         },
+
+        filterAdvance: async (parent, args) => {
+            const advanceFilter = await AdvanceModel.find({proyecto: args.idProyecto})
+                .populate('proyecto')
+                .populate('creadoPor');
+            return advanceFilter;
+        }
     },
 
     Mutation:{
