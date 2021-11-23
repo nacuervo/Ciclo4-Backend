@@ -22,7 +22,7 @@ const resolversUser = {
                 identificacion:args.identificacion,
                 nombre:args.nombre,
                 apellido:args.apellido,
-                contrasena:args.contrasena,
+                // contrasena:args.contrasena,
                 rol:args.rol
             });
 
@@ -38,10 +38,12 @@ const resolversUser = {
                 identificacion:args.identificacion,
                 nombre:args.nombre,
                 apellido:args.apellido,
-                contrasena: args.contrasena,
+                // contrasena: args.contrasena,
                 rol:args.rol,
                 estado: args.estado
-            });
+            },
+                {new: true}
+            );
             return userEdited;
         },
 

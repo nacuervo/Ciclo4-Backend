@@ -8,7 +8,7 @@ const typeUser = gql`
         identificacion: String!
         nombre: String!
         apellido: String!
-        contrasena: String!
+        # contrasena: String!
         rol: Enum_Rol!
         estado: Enum_EstadoUsuario
         projects:[Project]
@@ -27,7 +27,7 @@ const typeUser = gql`
             identificacion: String!
             nombre: String!
             apellido: String!
-            contrasena: String!
+            # contrasena: String!
             rol: Enum_Rol!
             estado: Enum_EstadoUsuario
         ):User
@@ -38,7 +38,7 @@ const typeUser = gql`
             identificacion: String!
             nombre: String!
             apellido: String!
-            contrasena: String!
+            # contrasena: String!
             rol: Enum_Rol!
             estado: Enum_EstadoUsuario
         ): User
