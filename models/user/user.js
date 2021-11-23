@@ -35,6 +35,10 @@ const userSchema =
                 type: String,
                 required: true,
             },
+            contrasena:{
+                type: String,
+                required: true,
+            },
             rol:{
                 type: String,
                 required: true,

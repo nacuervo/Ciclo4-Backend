@@ -18,10 +18,11 @@ const resolversUser = {
     Mutation: {
         createUser: async (parent, args) => {
             const userCreated = await UserModel.create({
+                correo:args.correo,
+                identificacion:args.identificacion,
                 nombre:args.nombre,
                 apellido:args.apellido,
-                identificacion:args.identificacion,
-                correo:args.correo,
+                contrasena:args.contrasena,
                 rol:args.rol
             });
 
@@ -33,10 +34,11 @@ const resolversUser = {
         
         editUser: async (parent, args) => {
             const userEdited = await UserModel.findOneAndUpdate(args._id,{
+                correo:args.correo,
+                identificacion:args.identificacion,
                 nombre:args.nombre,
                 apellido:args.apellido,
-                identificacion:args.identificacion,
-                correo:args.correo,
+                contrasena: args.contrasena,
                 rol:args.rol,
                 estado: args.estado
             });
@@ -50,6 +52,9 @@ const resolversUser = {
             }else if(Object.keys(args).includes('correo')) {
                 const userDeleted = await UserModel.findOneAndDelete({correo:args.correo});
                 return userDeleted;
+            }else if(Object.keys(args).includes('identificacion')){
+                const userDeleted = await UserModel.findOneAndDelete({identificacion:args.identificacion});
+                return userDeleted
             }
         },
     },

@@ -4,12 +4,13 @@ const typeUser = gql`
 
     type User {
         _id: ID!
+        correo: String!
+        identificacion: String!
         nombre: String!
         apellido: String!
-        identificacion: String!
-        correo: String!
-        estado: Enum_EstadoUsuario
+        contrasena: String!
         rol: Enum_Rol!
+        estado: Enum_EstadoUsuario
         projects:[Project]
         advances:[Advance]
         inscriptions:[Inscription]
@@ -22,27 +23,30 @@ const typeUser = gql`
 
     type Mutation{
         createUser(
+            correo: String!
+            identificacion: String!
             nombre: String!
             apellido: String!
-            identificacion: String!
-            correo: String!
-            estado: Enum_EstadoUsuario
+            contrasena: String!
             rol: Enum_Rol!
+            estado: Enum_EstadoUsuario
         ):User
 
         editUser(
             _id: String!
+            correo: String!
+            identificacion: String!
             nombre: String!
             apellido: String!
-            identificacion: String!
-            correo: String!
-            estado: Enum_EstadoUsuario
+            contrasena: String!
             rol: Enum_Rol!
+            estado: Enum_EstadoUsuario
         ): User
 
         deleteUser(
             _id:String
             correo:String
+            identificacion:String
         ):User
     }
 `;
